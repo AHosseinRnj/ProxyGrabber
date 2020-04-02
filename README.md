@@ -3,7 +3,7 @@
 </p>
 
 # ProxyGrabber
-> ...
+> ProxyGrabber fetches Http/Https, Socks4, and Socks5 proxies from proxyscrape.com from 64 different countries including Iran.
 
 ### Software Pictures
 | 1st. Pic | 2nd. Pic |
