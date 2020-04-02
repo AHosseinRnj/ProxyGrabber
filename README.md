@@ -1,4 +1,6 @@
-![App Logo](https://image.prntscr.com/image/QjRhhk6VT0_YoCuASHLp2Q.png)
+<p align="center">
+  <img src="https://image.prntscr.com/image/QjRhhk6VT0_YoCuASHLp2Q.png"/>
+</p>
 
 # ProxyGrabber
 > ...
