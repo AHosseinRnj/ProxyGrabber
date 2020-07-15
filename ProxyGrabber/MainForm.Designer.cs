@@ -32,9 +32,9 @@
             this.ExitBtn = new System.Windows.Forms.Button();
             this.MiniBtn = new System.Windows.Forms.Button();
             this.SeprLbl = new System.Windows.Forms.Label();
-            this.upChkSta = new System.Windows.Forms.Label();
-            this.AmountSta = new System.Windows.Forms.Label();
-            this.TimeoutSta = new System.Windows.Forms.Label();
+            this.LastUpdatedLbl = new System.Windows.Forms.Label();
+            this.AmountLbl = new System.Windows.Forms.Label();
+            this.TimeoutLbl = new System.Windows.Forms.Label();
             this.TimeoutTbar = new System.Windows.Forms.TrackBar();
             this.CountryCmBox = new System.Windows.Forms.ComboBox();
             this.AnonymityCmBox = new System.Windows.Forms.ComboBox();
@@ -89,35 +89,35 @@
             this.SeprLbl.Size = new System.Drawing.Size(294, 1);
             this.SeprLbl.TabIndex = 3;
             // 
-            // upChkSta
+            // LastUpdatedLbl
             // 
-            this.upChkSta.AutoSize = true;
-            this.upChkSta.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.upChkSta.Location = new System.Drawing.Point(12, 192);
-            this.upChkSta.Name = "upChkSta";
-            this.upChkSta.Size = new System.Drawing.Size(98, 19);
-            this.upChkSta.TabIndex = 5;
-            this.upChkSta.Text = "Last updated:";
+            this.LastUpdatedLbl.AutoSize = true;
+            this.LastUpdatedLbl.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LastUpdatedLbl.Location = new System.Drawing.Point(12, 192);
+            this.LastUpdatedLbl.Name = "LastUpdatedLbl";
+            this.LastUpdatedLbl.Size = new System.Drawing.Size(98, 19);
+            this.LastUpdatedLbl.TabIndex = 5;
+            this.LastUpdatedLbl.Text = "Last updated:";
             // 
-            // AmountSta
+            // AmountLbl
             // 
-            this.AmountSta.AutoSize = true;
-            this.AmountSta.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AmountSta.Location = new System.Drawing.Point(12, 219);
-            this.AmountSta.Name = "AmountSta";
-            this.AmountSta.Size = new System.Drawing.Size(65, 19);
-            this.AmountSta.TabIndex = 7;
-            this.AmountSta.Text = "Amount:";
+            this.AmountLbl.AutoSize = true;
+            this.AmountLbl.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AmountLbl.Location = new System.Drawing.Point(12, 219);
+            this.AmountLbl.Name = "AmountLbl";
+            this.AmountLbl.Size = new System.Drawing.Size(65, 19);
+            this.AmountLbl.TabIndex = 7;
+            this.AmountLbl.Text = "Amount:";
             // 
-            // TimeoutSta
+            // TimeoutLbl
             // 
-            this.TimeoutSta.AutoSize = true;
-            this.TimeoutSta.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TimeoutSta.Location = new System.Drawing.Point(79, 256);
-            this.TimeoutSta.Name = "TimeoutSta";
-            this.TimeoutSta.Size = new System.Drawing.Size(71, 19);
-            this.TimeoutSta.TabIndex = 9;
-            this.TimeoutSta.Text = "Timeout: ";
+            this.TimeoutLbl.AutoSize = true;
+            this.TimeoutLbl.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TimeoutLbl.Location = new System.Drawing.Point(79, 256);
+            this.TimeoutLbl.Name = "TimeoutLbl";
+            this.TimeoutLbl.Size = new System.Drawing.Size(71, 19);
+            this.TimeoutLbl.TabIndex = 9;
+            this.TimeoutLbl.Text = "Timeout: ";
             // 
             // TimeoutTbar
             // 
@@ -378,9 +378,9 @@
             this.Controls.Add(this.AnonymityCmBox);
             this.Controls.Add(this.CountryCmBox);
             this.Controls.Add(this.TimeoutTbar);
-            this.Controls.Add(this.TimeoutSta);
-            this.Controls.Add(this.AmountSta);
-            this.Controls.Add(this.upChkSta);
+            this.Controls.Add(this.TimeoutLbl);
+            this.Controls.Add(this.AmountLbl);
+            this.Controls.Add(this.LastUpdatedLbl);
             this.Controls.Add(this.DownloadIcoPicBox);
             this.Controls.Add(this.SeprLbl);
             this.Controls.Add(this.LogoPicBox);
@@ -410,9 +410,9 @@
         private System.Windows.Forms.PictureBox LogoPicBox;
         private System.Windows.Forms.Label SeprLbl;
         private System.Windows.Forms.PictureBox DownloadIcoPicBox;
-        private System.Windows.Forms.Label upChkSta;
-        private System.Windows.Forms.Label AmountSta;
-        private System.Windows.Forms.Label TimeoutSta;
+        private System.Windows.Forms.Label LastUpdatedLbl;
+        private System.Windows.Forms.Label AmountLbl;
+        private System.Windows.Forms.Label TimeoutLbl;
         private System.Windows.Forms.TrackBar TimeoutTbar;
         private System.Windows.Forms.ComboBox CountryCmBox;
         private System.Windows.Forms.ComboBox AnonymityCmBox;

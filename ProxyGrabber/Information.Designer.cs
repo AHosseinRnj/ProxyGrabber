@@ -80,7 +80,7 @@
             this.VerLbl.Name = "VerLbl";
             this.VerLbl.Size = new System.Drawing.Size(46, 21);
             this.VerLbl.TabIndex = 5;
-            this.VerLbl.Text = "1.0.0:";
+            this.VerLbl.Text = "1.1.0:";
             // 
             // label1
             // 
@@ -88,9 +88,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(44, 67);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 32);
+            this.label1.Size = new System.Drawing.Size(138, 32);
             this.label1.TabIndex = 6;
-            this.label1.Text = "- Release Ver.\r\n- Might have bugs\r\n";
+            this.label1.Text = "[+] Code Optimization\r\n[+] Minor Bug Fixes\r\n";
             // 
             // label2
             // 
@@ -108,7 +108,7 @@
             this.InstagramPicBox.Image = global::ProxyGrabber.Properties.Resources.Instagram_Logo;
             this.InstagramPicBox.Location = new System.Drawing.Point(195, 141);
             this.InstagramPicBox.Name = "InstagramPicBox";
-            this.InstagramPicBox.Size = new System.Drawing.Size(94, 93);
+            this.InstagramPicBox.Size = new System.Drawing.Size(92, 89);
             this.InstagramPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.InstagramPicBox.TabIndex = 12;
             this.InstagramPicBox.TabStop = false;
@@ -120,7 +120,7 @@
             this.TelegramPicBox.Image = global::ProxyGrabber.Properties.Resources.Telegram_Logo;
             this.TelegramPicBox.Location = new System.Drawing.Point(103, 146);
             this.TelegramPicBox.Name = "TelegramPicBox";
-            this.TelegramPicBox.Size = new System.Drawing.Size(86, 85);
+            this.TelegramPicBox.Size = new System.Drawing.Size(84, 81);
             this.TelegramPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.TelegramPicBox.TabIndex = 11;
             this.TelegramPicBox.TabStop = false;
@@ -130,7 +130,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(387, 242);
+            this.ClientSize = new System.Drawing.Size(387, 236);
             this.ControlBox = false;
             this.Controls.Add(this.InstagramPicBox);
             this.Controls.Add(this.TelegramPicBox);

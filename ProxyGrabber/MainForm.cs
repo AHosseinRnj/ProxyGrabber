@@ -13,32 +13,35 @@ namespace ProxyGrabber
             InitializeComponent();
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-            TimeoutSta.Text = "Timeout: " + Convert.ToString(TimeoutTbar.Value) + "ms";
-            amountUpdate();
-            TypeCmBox.SelectedIndex = 0;
-            CountryCmBox.SelectedIndex = 0;
-            AnonymityCmBox.SelectedIndex = 0;
-            SSLCmBox.SelectedIndex = 0;
-        }
-
-        webAPI API;
         private string timeout;
         private string proxytype;
         private string country;
         private string anonymity;
         private string ssl;
+        webAPI API = new webAPI();
+        Information InfoDialog = new Information();
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            TimeoutLbl.Text = "Timeout: " + Convert.ToString(TimeoutTbar.Value) + "ms";
+
+            TypeCmBox.SelectedIndex = 0;
+            CountryCmBox.SelectedIndex = 0;
+            AnonymityCmBox.SelectedIndex = 0;
+            SSLCmBox.SelectedIndex = 0;
+
+            AmountLbl.Text = "Amount: " + API.amountProxies();
+        }
 
         private void TimeoutTbar_Scroll(object sender, EventArgs e)
         {
             timeout = Convert.ToString(TimeoutTbar.Value);
-            TimeoutSta.Text = "Timeout: " + timeout + "ms";
+            TimeoutLbl.Text = "Timeout: " + timeout + "ms";
         }
 
         private void TimeoutTbar_MouseCaptureChanged(object sender, EventArgs e)
         {
-            amountUpdate();
+            API.setTimeout(timeout);
+            AmountLbl.Text = "Amount: " + API.amountProxies();
         }
 
         private void TypeCmBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -56,31 +59,34 @@ namespace ProxyGrabber
                 AnonymityCmBox.Enabled = true;
                 SSLCmBox.Enabled = true;
             }
-            timeUpdate();
-            amountUpdate();
+            API.setProxyType(proxytype);
+            LastUpdatedLbl.Text = "Last updated: " + API.lastUpdated();
+            AmountLbl.Text = "Amount: " + API.amountProxies();
         }
 
         private void CountryCmBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             country = Convert.ToString(CountryCmBox.SelectedItem);
-            amountUpdate();
+            API.setCountry(country);
+            AmountLbl.Text = "Amount: " + API.amountProxies();
         }
 
         private void AnonymityCmBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             anonymity = Convert.ToString(AnonymityCmBox.SelectedItem);
-            amountUpdate();
+            API.setAnonymity(anonymity);
+            AmountLbl.Text = "Amount: " + API.amountProxies();
         }
 
         private void SSLCmBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             ssl = Convert.ToString(SSLCmBox.SelectedItem);
-            amountUpdate();
+            API.setSSL(ssl);
+            AmountLbl.Text = "Amount: " + API.amountProxies();
         }
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
-            APIReq();
             if (SaveProxies.ShowDialog() == DialogResult.OK)
             {
                 API.Download(SaveProxies.FileName);
@@ -94,6 +100,10 @@ namespace ProxyGrabber
 
         private void ExitBtn_Click(object sender, EventArgs e)
         {
+            API.Dispose();
+            API = null;
+            InfoDialog = null;
+            GC.Collect();
             Application.Exit();
         }
 
@@ -104,25 +114,7 @@ namespace ProxyGrabber
 
         private void InfoBtn_Click(object sender, EventArgs e)
         {
-            Information InfoDialog = new Information();
             InfoDialog.ShowDialog();
-        }
-
-        public void timeUpdate()
-        {
-            APIReq();
-            upChkSta.Text = "Last updated: " + API.Lastupdated();
-        }
-
-        public void amountUpdate()
-        {
-            APIReq();
-            AmountSta.Text = "Amount: " + API.AmountProxies();
-        }
-
-        public void APIReq()
-        {
-            API = new webAPI(timeout, proxytype, country, anonymity, ssl);
         }
 
         public const int WM_NCLBUTTONDOWN = 0xA1;

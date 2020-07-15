@@ -25,6 +25,7 @@ namespace ProxyGrabber
         private void ExitBtn_Click(object sender, EventArgs e)
         {
             this.Close();
+            GC.Collect();
         }
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
