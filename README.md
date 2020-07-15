@@ -10,5 +10,10 @@
 | --- | ---  |
 |![](https://image.prntscr.com/image/TtCZaWspQJCpkRiOgVW6yw.png) | ![](https://image.prntscr.com/image/QFq-LPn5QRi91QNUrl-b-g.png)  |
 
+## Download
+You can download binary from releases:
+
+[https://github.com/AHosseinRnj/ProxyGrabber/releases](https://github.com/AHosseinRnj/ProxyGrabber/releases)
+
 # Licence
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
