@@ -80,7 +80,7 @@
             this.VerLbl.Name = "VerLbl";
             this.VerLbl.Size = new System.Drawing.Size(46, 21);
             this.VerLbl.TabIndex = 5;
-            this.VerLbl.Text = "1.1.0:";
+            this.VerLbl.Text = "1.1.1:";
             // 
             // label1
             // 
@@ -88,9 +88,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(44, 67);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(138, 32);
+            this.label1.Size = new System.Drawing.Size(280, 16);
             this.label1.TabIndex = 6;
-            this.label1.Text = "[+] Code Optimization\r\n[+] Minor Bug Fixes\r\n";
+            this.label1.Text = "[+] Minor improvement and code optimization\r\n";
             // 
             // label2
             // 

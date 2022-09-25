@@ -13,13 +13,6 @@ namespace ProxyGrabber
             InitializeComponent();
         }
 
-        private string timeout;
-        private string proxytype;
-        private string country;
-        private string anonymity;
-        private string ssl;
-        webAPI API = new webAPI();
-        Information InfoDialog = new Information();
         private void MainForm_Load(object sender, EventArgs e)
         {
             TimeoutLbl.Text = "Timeout: " + Convert.ToString(TimeoutTbar.Value) + "ms";
@@ -29,28 +22,31 @@ namespace ProxyGrabber
             AnonymityCmBox.SelectedIndex = 0;
             SSLCmBox.SelectedIndex = 0;
 
-            AmountLbl.Text = "Amount: " + API.amountProxies();
+            AmountLbl.Text = API.ProxiesCount();
         }
 
+        private string _timeOut = string.Empty;
         private void TimeoutTbar_Scroll(object sender, EventArgs e)
         {
-            timeout = Convert.ToString(TimeoutTbar.Value);
-            TimeoutLbl.Text = "Timeout: " + timeout + "ms";
+            _timeOut = Convert.ToString(TimeoutTbar.Value);
+            TimeoutLbl.Text = "Timeout: " + _timeOut + " ms";
         }
 
         private void TimeoutTbar_MouseCaptureChanged(object sender, EventArgs e)
         {
-            API.setTimeout(timeout);
-            AmountLbl.Text = "Amount: " + API.amountProxies();
+            API.TimeOut = _timeOut;
+            AmountLbl.Text = API.ProxiesCount();
         }
 
         private void TypeCmBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            proxytype = Convert.ToString(TypeCmBox.SelectedItem);
-            if (proxytype == "socks4" || proxytype == "socks5")
+            API.ProxyType = Convert.ToString(TypeCmBox.SelectedItem);
+
+            if (API.ProxyType == "socks4" || API.ProxyType == "socks5")
             {
                 AnonymityCmBox.SelectedIndex = 0;
                 SSLCmBox.SelectedIndex = 0;
+
                 AnonymityCmBox.Enabled = false;
                 SSLCmBox.Enabled = false;
             }
@@ -59,30 +55,27 @@ namespace ProxyGrabber
                 AnonymityCmBox.Enabled = true;
                 SSLCmBox.Enabled = true;
             }
-            API.setProxyType(proxytype);
-            LastUpdatedLbl.Text = "Last updated: " + API.lastUpdated();
-            AmountLbl.Text = "Amount: " + API.amountProxies();
+
+            LastUpdatedLbl.Text = API.lastUpdated();
+            AmountLbl.Text = API.ProxiesCount();
         }
 
         private void CountryCmBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            country = Convert.ToString(CountryCmBox.SelectedItem);
-            API.setCountry(country);
-            AmountLbl.Text = "Amount: " + API.amountProxies();
+            API.Country = Convert.ToString(CountryCmBox.SelectedItem);
+            AmountLbl.Text = API.ProxiesCount();
         }
 
         private void AnonymityCmBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            anonymity = Convert.ToString(AnonymityCmBox.SelectedItem);
-            API.setAnonymity(anonymity);
-            AmountLbl.Text = "Amount: " + API.amountProxies();
+            API.Anonymity = Convert.ToString(AnonymityCmBox.SelectedItem);
+            AmountLbl.Text = API.ProxiesCount();
         }
 
         private void SSLCmBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ssl = Convert.ToString(SSLCmBox.SelectedItem);
-            API.setSSL(ssl);
-            AmountLbl.Text = "Amount: " + API.amountProxies();
+            API.Ssl = Convert.ToString(SSLCmBox.SelectedItem);
+            AmountLbl.Text = API.ProxiesCount();
         }
 
         private void SaveBtn_Click(object sender, EventArgs e)
@@ -100,10 +93,6 @@ namespace ProxyGrabber
 
         private void ExitBtn_Click(object sender, EventArgs e)
         {
-            API.Dispose();
-            API = null;
-            InfoDialog = null;
-            GC.Collect();
             Application.Exit();
         }
 
@@ -114,7 +103,10 @@ namespace ProxyGrabber
 
         private void InfoBtn_Click(object sender, EventArgs e)
         {
-            InfoDialog.ShowDialog();
+            using (Information InfoDialog = new Information())
+            {
+                InfoDialog.ShowDialog();
+            }
         }
 
         public const int WM_NCLBUTTONDOWN = 0xA1;

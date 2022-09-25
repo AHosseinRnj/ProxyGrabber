@@ -48,7 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\webAPI.cs" />
+    <Compile Include="Classes\API.cs" />
     <Compile Include="Information.cs">
       <SubType>Form</SubType>
     </Compile>
